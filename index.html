@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess capital</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="animation.css" rel="stylesheet">
+</head>
+<body>
+    <!-- div z opcjami do ustawienia na początku -->
+    <div id="div_start">
+        <h1 id="h1_start">GUESS CAPITAL</h1>
+        <div id="input_hp" class="options">
+            <p id="p_hp" class="p_options">Choose the amount of health points</p>
+            <input id="range_hp" type="range" min="1" max="5" oninput="this.nextElementSibling.value = this.value">
+            <output id="output_hp" class="output_options">3</output>
+        </div>
+        <div id="div_select_elements" class="options">
+            <p id="p_select_elements" class="p_options">Select region of random countries</p>
+            <input id="range_select_elements" type="range" min="1" max="6" value="2" oninput="select_elements()">
+            <output id="output_select_elements" class="output_options">Europe</output>
+        </div>
+        <button id="button_start" onclick="start()">START GAME</button>
+    </div>
+    <!-- div z elementami gry -->
+    <div id="div_game">
+        <div id="game">
+            <div id="country">
+                <input type="text" id="answer">
+            </div>
+        </div>
+        <div id="interface">
+            <p id="pkt">Your score: 0</p>
+            <p id="hp">❤</p>
+        </div>
+        <p id="correct_answer"></p>
+        <button id="button_help_window" class="button_h_w" onclick="show_help_window()">?</button>
+        <button id="button_close_help_window" class="button_h_w" onclick="hide_help_window()">X</button>
+    </div>
+    <!-- div wyświetlany po zakończeniu gry -->
+    <div id="div_game_over">
+        <h1 id="h1_game_over">GAME OVER</h1>
+        <p id="final_score"></p>
+        <button id="button_try_again" onclick="try_again()">Try again</button>
+    </div>
+    <!-- okno pomocy -->
+    <div id="div_help_window">
+        <div id="help_window">
+            <ul>
+                <li>Type the answer under the 'ENTER ANSWER' in textbox</li>
+                <li>Press `ENTER` to enter your answer</li>
+                <li>If your answer is correct, you score a point</li>
+                <li>If your answer is incorrect, you lose a health point</li>
+                <li>If you lose all your health points, the game will be over</li>
+                <p id="gl">GOOD LUCK</p>
+            </ul>
+        </div>
+    </div>
+    <div id="div_loading">
+        <p>Loading</p>
+        <p id="dot1">.</p>
+        <p id="dot2">.</p>
+        <p id="dot3">.</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

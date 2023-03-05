@@ -1,0 +1,25 @@
+@keyframes loading_a {
+    0% {color: white;}
+    50% {color: rgba(255, 255, 255, 0);}
+    100% {color: white;}
+}
+
+#dot1 {
+    animation-name: loading_a;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#dot2 {
+    animation-name: loading_a;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+
+#dot3 {
+    animation-name: loading_a;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
